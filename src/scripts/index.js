@@ -239,38 +239,60 @@ console.log(persons);*/
 
 // ECMA ES6
 
-/*class Person {
-    constructor(id){
-        this.id = id;
-    }
-    identify(suffix){
-        return `person ${suffix}`;
-    }
-}
-let person = new Person(123);
+// class Person {
+//     constructor(id){
+//         this.id = id;
+//     }
+//     identify(suffix){
+//         return `person ${suffix}`;
+//     }
+// }
+// let person = new Person(123);
 
-console.log(person);
-let result = person.identify('Hola');
-console.log(result);*/
+// console.log(person);
+// let result = person.identify('Hola');
+// console.log(result);
 
-class Engine {
-    constructor(){
-        this.type = 'Hibrid';
-    }
-    start(){
-        return `Starting: ${this.type}`;
-    }
-}
+//  class Engine {
+//     constructor(){
+//         this.type = 'Hibrid';
+//     }
+//     start(){
+//         return `Starting: ${this.type}`;
+//     }
+// }
 
-class Car extends Engine {
-    constructor(){
-        super();
-    }
-    start() {
-        //return `Car to Starting: ${this.type}`;
-        return super.start();
-    }
-}
+// class Car extends Engine {
+//     constructor(){
+//         super();
+//     }
+//     start() {
+//         //return `Car to Starting: ${this.type}`;
+//         return super.start();
+//     }
+// }
 
-let car = new Car();
-console.log(car.start());
+// let car = new Car();
+// console.log(car.start()); 
+
+// try {
+//     // let person = newPerson;
+//     throw new Error('Trone :(');
+// } catch (error) {
+//     console.error(`Error ${error}`);
+// } finally {
+//     console.log('Finally');
+// }
+
+let promise = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        try {
+            resolve('Todo Ok :D');
+        } catch (error) {
+            reject('El(la) no te ama :(');
+        }
+    }, 5 * 1000);
+});
+
+promise.then(success => console.log(`ok ${success}`), 
+            error => console.log(`Error ${error}`));
